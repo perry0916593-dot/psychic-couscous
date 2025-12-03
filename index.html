@@ -3,27 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perry Social</title>
+    <title>Perry Social – Login</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Perry Social</h1>
-        <p>Connect. Share. Explore.</p>
-    </header>
+    <div class="login-container">
+        <h1>Welcome to Perry Social</h1>
 
-    <section class="profile-box">
-        <h2>Welcome</h2>
-        <p>I’m an upcoming developer building apps using my Android phone.</p>
-    </section>
+        <form>
+            <label>Email</label>
+            <input type="email" placeholder="Enter your email" required>
 
-    <section class="links">
-        <h2>Quick Links</h2>
-        <a class="btn" href="#">My Social Media App</a>
-        <a class="btn" href="#">Tools & Resources</a>
-        <a class="btn" href="#">Contact Me</a>
-    </section>
+            <label>Password</label>
+            <input type="password" placeholder="Enter your password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <p class="note">
+            This is a demo login. Real authentication will be added soon.
+        </p>
+
+    </div>
 
 </body>
 </html>
