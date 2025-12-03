@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perry Social - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f3f3;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Top Navbar */
+        .navbar {
+            background: #000;
+            color: #fff;
+            padding: 15px;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Main Feed */
+        .feed {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        .post {
+            background: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #ccc;
+            margin-right: 10px;
+        }
+
+        .username {
+            font-weight: bold;
+        }
+
+        .post img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .actions {
+            margin-top: 10px;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            border: none;
+            background: #000;
+            color: #fff;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .logout {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .logout a {
+            color: #000;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">Perry Social</div>
+
+    <!-- Feed -->
+    <div class="feed">
+
+        <!-- Post 1 -->
+        <div class="post">
+            <div class="post-header">
+                <div class="avatar"></div>
+                <div class="username">User One</div>
+            </div>
+            <p>This is my first post on Perry Social! 🚀</p>
+            <img src="https://via.placeholder.com/500" alt="Post Image">
+            <div class="actions">
+                <button class="btn">Like</button>
+                <button class="btn">Comment</button>
+            </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="post">
+            <div class="post-header">
+                <div class="avatar"></div>
+                <div class="username">User Two</div>
+            </div>
+            <p>What a beautiful day ☀️</p>
+            <img src="https://via.placeholder.com/500" alt="Post Image">
+            <div class="actions">
+                <button class="btn">Like</button>
+                <button class="btn">Comment</button>
+            </div>
+        </div>
+
+        <!-- Logout -->
+        <div class="logout">
+            <a href="index.html">Logout</a>
+        </div>
+    </div>
+
+</body>
+</html>
