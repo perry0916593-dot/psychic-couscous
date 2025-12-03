@@ -7,18 +7,23 @@
 </head>
 <body>
 
-    <header>
-        <h1>Login</h1>
-        <p>Access your account</p>
-    </header>
+    <div class="login-container">
+        <h2>Login</h2>
 
-    <section class="login-box">
-        <form action="home.html">
-            <input type="text" placeholder="Username" required>
-            <input type="password" placeholder="Password" required>
+        <form action="home.html" method="GET">
+            <label>Username</label>
+            <input type="text" placeholder="Enter username" required>
+
+            <label>Password</label>
+            <input type="password" placeholder="Enter password" required>
+
             <button type="submit" class="btn">Login</button>
         </form>
-    </section>
+
+        <p class="back-link">
+            <a href="index.html">⬅ Back to Welcome</a>
+        </p>
+    </div>
 
 </body>
 </html>
