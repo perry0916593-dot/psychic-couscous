@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perry Social – Login</title>
+    <title>Perry Social - Login</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,14 +18,10 @@
             <label>Password</label>
             <input type="password" placeholder="Enter your password">
 
-            <button onclick="window.location.href='home.html'; return false;" type="submit">
+            <button onclick="window.location.href='home.html'; return false;" type="button">
                 Login
             </button>
         </form>
-
-        <p class="note">
-            This is a demo login. Real authentication will be added soon.
-        </p>
     </div>
 
 </body>
