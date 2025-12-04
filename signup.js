@@ -1,51 +1,32 @@
-import { auth, db, createUserWithEmailAndPassword, signInWithPopup, googleProvider, doc, setDoc } from "./firebase.js";
+// SIGNUP FORM SCRIPT
+const signupForm = document.getElementById("signupForm");
+const signupBtn = document.getElementById("signupBtn");
 
-// Email/Password Sign Up
-document.getElementById("signupBtn").addEventListener("click", async () => {
-    const name = document.getElementById("name").value.trim();
+signupForm.addEventListener("submit", function (e) {
+    e.preventDefault(); // stop page reload
+
+    const fullname = document.getElementById("fullname").value.trim();
     const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value;
+    const password = document.getElementById("password").value.trim();
+    const confirmPassword = document.getElementById("confirmPassword").value.trim();
 
-    if (!name || !email || !password) {
-        alert("All fields are required!");
+    // Basic validation
+    if (!fullname || !email || !password || !confirmPassword) {
+        alert("Please fill all fields.");
         return;
     }
 
-    try {
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        const user = userCredential.user;
-
-        // Save user info to Firestore
-        await setDoc(doc(db, "users", user.uid), {
-            name: name,
-            email: email,
-            createdAt: new Date()
-        });
-
-        alert("Account created successfully!");
-        window.location.href = "home.html"; // redirect after signup
-
-    } catch (error) {
-        alert(error.message);
+    if (password.length < 6) {
+        alert("Password must be at least 6 characters.");
+        return;
     }
-});
 
-// Google Sign Up
-document.getElementById("googleBtn").addEventListener("click", async () => {
-    try {
-        const result = await signInWithPopup(auth, googleProvider);
-        const user = result.user;
-
-        // Save Google user info
-        await setDoc(doc(db, "users", user.uid), {
-            name: user.displayName,
-            email: user.email,
-            createdAt: new Date()
-        });
-
-        window.location.href = "home.html";
-
-    } catch (error) {
-        alert(error.message);
+    if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
     }
+
+    // If everything is okay
+    alert("Signup successful! Redirecting to login page...");
+    window.location.href = "login.html";
 });
