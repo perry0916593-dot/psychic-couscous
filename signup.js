@@ -1,50 +1,51 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
-import { 
-    getAuth, 
-    createUserWithEmailAndPassword, 
-    GoogleAuthProvider, 
-    signInWithPopup 
-} from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
+import { auth, db, createUserWithEmailAndPassword, signInWithPopup, googleProvider, doc, setDoc } from "./firebase.js";
 
-// Firebase Config
-const firebaseConfig = {
-    apiKey: "AIzaSyCgm3pqkOg4sATsImvq0R6ZPNG1HY9jJQU",
-    authDomain: "my-social-app-c1fb8.firebaseapp.com",
-    projectId: "my-social-app-c1fb8",
-    storageBucket: "my-social-app-c1fb8.firebasestorage.app",
-    messagingSenderId: "618305477782",
-    appId: "1:618305477782:web:85bd2c41c9a717d8a876b7"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
-// Email + Password Signup
-document.getElementById("signupBtn").addEventListener("click", () => {
+// Email/Password Sign Up
+document.getElementById("signupBtn").addEventListener("click", async () => {
+    const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
+    const password = document.getElementById("password").value;
 
-    createUserWithEmailAndPassword(auth, email, password)
-    .then(() => {
-        alert("Account created!");
-        window.location.href = "login.html";
-    })
-    .catch((error) => {
+    if (!name || !email || !password) {
+        alert("All fields are required!");
+        return;
+    }
+
+    try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+
+        // Save user info to Firestore
+        await setDoc(doc(db, "users", user.uid), {
+            name: name,
+            email: email,
+            createdAt: new Date()
+        });
+
+        alert("Account created successfully!");
+        window.location.href = "home.html"; // redirect after signup
+
+    } catch (error) {
         alert(error.message);
-    });
+    }
 });
 
-// Google Signup
-document.getElementById("googleBtn").addEventListener("click", () => {
-    const provider = new GoogleAuthProvider();
+// Google Sign Up
+document.getElementById("googleBtn").addEventListener("click", async () => {
+    try {
+        const result = await signInWithPopup(auth, googleProvider);
+        const user = result.user;
 
-    signInWithPopup(auth, provider)
-    .then(() => {
-        alert("Google signup complete!");
+        // Save Google user info
+        await setDoc(doc(db, "users", user.uid), {
+            name: user.displayName,
+            email: user.email,
+            createdAt: new Date()
+        });
+
         window.location.href = "home.html";
-    })
-    .catch((error) => {
+
+    } catch (error) {
         alert(error.message);
-    });
+    }
 });
