@@ -3,33 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login • My Social App</title>
+    <title>Login – Social App</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <div class="container">
-        <h2>Login</h2>
+    <div class="auth-container">
+        <h2>Welcome Back</h2>
 
-        <!-- Email Login -->
-        <input type="email" id="email" placeholder="Email" required>
-        <input type="password" id="password" placeholder="Password" required>
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
 
         <button id="loginBtn">Login</button>
 
-        <!-- Google Login -->
-        <button id="googleBtn" class="google-btn">
-            Continue with Google
-        </button>
+        <p>Don’t have an account? <a href="signup.html">Sign Up</a></p>
 
-        <p>
-            Don't have an account?
-            <a href="signup.html">Create one</a>
-        </p>
+        <button id="googleBtn" class="google">Continue with Google</button>
     </div>
 
-    <!-- Firebase + Auth Script will go below -->
+    <script type="module" src="firebase.js"></script>
     <script type="module" src="login.js"></script>
 
 </body>
