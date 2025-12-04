@@ -1,14 +1,15 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
-
+// Firebase configuration for your app
 const firebaseConfig = {
-  apiKey: "YOUR KEY",
-  authDomain: "YOUR DOMAIN",
-  projectId: "YOUR PROJECT ID",
-  storageBucket: "YOUR BUCKET",
-  messagingSenderId: "YOUR ID",
-  appId: "YOUR APP ID"
+  apiKey: "AIzaSyCgm3pqk0g4sATsGR-pyLuhOevZq9LGATY",
+  authDomain: "my-social-app-c1fb8.firebaseapp.com",
+  projectId: "my-social-app-c1fb8",
+  storageBucket: "my-social-app-c1fb8.appspot.com",
+  messagingSenderId: "618305477782",
+  appId: "1:618305477782:web:94e044ea01d578e8a876b7"
 };
 
-const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Initialize Firebase Authentication
+const auth = firebase.auth();
