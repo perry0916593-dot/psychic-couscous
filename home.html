@@ -1,28 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="top-bar">
-        <h1>My Social App</h1>
-        <a href="index.html" class="logout-btn">Logout</a>
+    <!-- TOP NAVIGATION -->
+    <header class="top-nav">
+        <h1 class="app-title">My Social App</h1>
+        <a href="login.html" class="logout-btn">Logout</a>
     </header>
 
-    <section class="home-content">
-        <h2>Welcome!</h2>
-        <p>You are now logged in.</p>
+    <!-- MAIN CONTENT -->
+    <div class="home-container">
+        <h2>Welcome to Your Dashboard</h2>
+        <p class="welcome-text">Choose a feature to begin</p>
 
+        <!-- FEATURE BOXES -->
         <div class="features">
-            <a class="feature-box">Chat</a>
-            <a class="feature-box">Friends</a>
-            <a class="feature-box">Profile</a>
-            <a class="feature-box">Discover</a>
+
+            <a href="#" class="feature-box">
+                <h3>Profile</h3>
+                <p>View your account</p>
+            </a>
+
+            <a href="#" class="feature-box">
+                <h3>Feed</h3>
+                <p>See posts & updates</p>
+            </a>
+
+            <a href="#" class="feature-box">
+                <h3>Messages</h3>
+                <p>Chat with friends</p>
+            </a>
+
+            <a href="#" class="feature-box">
+                <h3>Settings</h3>
+                <p>Customize your account</p>
+            </a>
+
         </div>
-    </section>
+    </div>
 
 </body>
 </html>
