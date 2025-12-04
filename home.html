@@ -3,29 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>My Social App</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: #f2f3f5;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background: #ffffff;
+            padding: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logout-btn {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: #ff3b30;
+            padding: 7px 12px;
+            color: white;
+            border-radius: 8px;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .feed {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .post {
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+
+        .username {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .content {
+            margin-top: 5px;
+            font-size: 15px;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>My Social App</h1>
-        <a href="index.html" class="logout-btn">Logout</a>
+    <div class="navbar">
+        My Social App
+        <a href="login.html" class="logout-btn">Logout</a>
+    </div>
 
-        <h2>Welcome!</h2>
-        <p>This is your social media home page.</p>
+    <div class="feed">
 
-        <!-- Example Post 1 -->
         <div class="post">
-            <h3>@demo_user</h3>
-            <p>This is your first sample post! 🚀</p>
+            <div class="username">@demo_user</div>
+            <div class="content">This is your first sample post! 🚀</div>
         </div>
 
-        <!-- Example Post 2 -->
         <div class="post">
-            <h3>@another_user</h3>
-            <p>Welcome to your social media platform!</p>
+            <div class="username">@another_user</div>
+            <div class="content">Welcome to your social media platform!</div>
         </div>
+
     </div>
 
 </body>
