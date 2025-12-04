@@ -9,33 +9,44 @@
 <body>
 
 <div class="topbar">
-    <h1>Your Profile</h1>
+    <h1>My Profile</h1>
 </div>
 
 <div class="profile-header">
-    <img src="https://via.placeholder.com/120" class="profile-pic">
-    <h2 class="profile-username">@your_username</h2>
-    <p class="profile-bio">This is your bio. You can update it later.</p>
+    <img src="https://via.placeholder.com/90" class="profile-pic">
+    <h2 class="profile-name">Your Name</h2>
+    <p class="profile-username">@your_username</p>
+</div>
 
-    <div class="profile-stats">
-        <div class="stat-box">
-            <strong>12</strong><br>Posts
-        </div>
-        <div class="stat-box">
-            <strong>340</strong><br>Followers
-        </div>
-        <div class="stat-box">
-            <strong>150</strong><br>Following
-        </div>
+<div class="profile-stats">
+    <div class="stat-box">
+        <h3>120</h3>
+        <p>Posts</p>
+    </div>
+    <div class="stat-box">
+        <h3>530</h3>
+        <p>Followers</p>
+    </div>
+    <div class="stat-box">
+        <h3>280</h3>
+        <p>Following</p>
     </div>
 </div>
 
-<div class="container">
+<div class="profile-bio">
+    <p>Upcoming developer building apps using my Android phone 📱🚀</p>
+</div>
 
-    <div class="post-card">
-        <p class="post-user">@your_username</p>
-        <p class="post-text">This is your first profile post!</p>
-    </div>
+<h2 class="section-title">Your Posts</h2>
+
+<div class="posts-grid">
+
+    <div class="post-box"></div>
+    <div class="post-box"></div>
+    <div class="post-box"></div>
+    <div class="post-box"></div>
+    <div class="post-box"></div>
+    <div class="post-box"></div>
 
 </div>
 
