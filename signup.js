@@ -1,18 +1,17 @@
-import { auth, createUserWithEmailAndPassword } from "./firebase.js";
+const signupForm = document.getElementById("signupForm");
 
-const form = document.getElementById("signupForm");
-
-form.addEventListener("submit", async (e) => {
+signupForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    try {
-        await createUserWithEmailAndPassword(auth, email, password);
-        alert("Signup successful!");
-        window.location.href = "login.html";
-    } catch (error) {
-        alert("Error: " + error.message);
-    }
+    auth.createUserWithEmailAndPassword(email, password)
+    .then(() => {
+        alert("Account created successfully!");
+        window.location.href = "login.html"; // Redirect to login
+    })
+    .catch((error) => {
+        alert(error.message);
+    });
 });
