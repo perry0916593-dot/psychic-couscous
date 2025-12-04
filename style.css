@@ -1,62 +1,68 @@
-/* Home Page Styles */
+/* -------------------------
+   HOME PAGE STYLING
+-------------------------- */
+
 .top-nav {
-    background: #0078ff;
-    color: white;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: 100%;
+    background: #ffffff;
+    padding: 15px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .app-title {
     margin: 0;
     font-size: 22px;
     font-weight: bold;
-}
-
-.logout-btn {
-    color: white;
-    background: #ff4444;
-    padding: 8px 15px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
+    color: #333;
 }
 
 .home-container {
-    max-width: 800px;
-    margin: 40px auto;
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
     text-align: center;
+}
+
+.welcome-title {
+    font-size: 26px;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .welcome-text {
     font-size: 16px;
-    margin-bottom: 25px;
     color: #555;
+    margin-bottom: 25px;
 }
 
-.features {
+.button-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 15px;
 }
 
-.feature-box {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.feature-btn {
+    display: block;
+    padding: 14px;
+    background: #4c6ef5;
+    color: #fff;
     text-decoration: none;
-    color: black;
-    transition: 0.2s;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
-.feature-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+.feature-btn:hover {
+    background: #3b5bdb;
 }
 
-.feature-box h3 {
-    margin: 0;
-    font-size: 20px;
+.logout-btn {
+    background: #e03131;
+}
+
+.logout-btn:hover {
+    background: #c92a2a;
 }
