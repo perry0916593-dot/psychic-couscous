@@ -1,85 +1,35 @@
-/* Global Styles */
-body {
-    font-family: Arial, sans-serif;
-    background: #f1f1f1;
-    margin: 0;
-    padding: 0;
-}
-
-/* Login + Home Card */
+/* Home Page Container */
 .container {
-    width: 90%;
-    max-width: 400px;
-    background: #fff;
+    max-width: 500px;
     margin: 50px auto;
-    padding: 25px;
+    background: white;
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* Titles */
-h2, h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Inputs */
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-/* Buttons */
-button, .feature-btn {
-    width: 100%;
-    background: #4c6ef5;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    margin-top: 10px;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-}
-
-button:hover, .feature-btn:hover {
-    background: #3b5bdb;
-}
-
-/* Back link */
-.back-link {
-    display: block;
-    margin-top: 15px;
-    text-align: left;
-}
-
-/* Navigation bar */
-.top-nav {
-    width: 100%;
-    background: #fff;
-    padding: 15px 20px;
-    text-align: center;
-    font-weight: bold;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-/* Home buttons grid */
-.button-grid {
-    display: grid;
-    gap: 15px;
-    margin-top: 20px;
-}
-
+/* Logout Button */
 .logout-btn {
-    background: #e03131;
+    display: inline-block;
+    background: #333;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    float: right;
+    margin-top: -40px;
 }
 
-.logout-btn:hover {
-    background: #c92a2a;
+/* Post Box */
+.post {
+    background: #f7f7f7;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border: 1px solid #ddd;
+}
+
+.post h3 {
+    margin: 0;
+    font-size: 16px;
 }
