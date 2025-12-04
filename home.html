@@ -1,46 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social App - Home</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="top-nav">MySocial</div>
+    <!-- Top Navigation Bar -->
+    <header class="topbar">
+        <h1>MySocial</h1>
+    </header>
 
-<!-- Example Post -->
-<div class="post" style="margin-top: 80px;">
-  <div class="post-header">
-    <img src="https://i.ibb.co/8rNNPdh/user.png">
-    <span class="post-username">John Doe</span>
-  </div>
+    <!-- Create Post Section -->
+    <section class="create-post">
+        <textarea placeholder="What's on your mind?"></textarea>
+        <button>Post</button>
+    </section>
 
-  <div class="post-content">
-    This is my first post on this amazing platform!
-  </div>
-</div>
+    <!-- Feed Section -->
+    <section class="feed">
 
-<!-- Bottom Navigation -->
-<div class="bottom-nav">
-  <a href="home.html">
-    <img src="https://i.ibb.co/Y8Mq1tT/home.png">Home
-  </a>
-  <a href="search.html">
-    <img src="https://i.ibb.co/5cLpn7T/search.png">Search
-  </a>
-  <a href="create.html">
-    <img src="https://i.ibb.co/4p1LZV3/add.png">Post
-  </a>
-  <a href="messages.html">
-    <img src="https://i.ibb.co/HxvqzNf/message.png">Messages
-  </a>
-  <a href="profile.html">
-    <img src="https://i.ibb.co/8rNNPdh/user.png">Profile
-  </a>
-</div>
+        <!-- Example post 1 -->
+        <div class="post">
+            <div class="post-header">
+                <div class="avatar"></div>
+                <div class="username">@user1</div>
+            </div>
+
+            <div class="post-content">
+                This is an example post. Your real posts will appear here later.
+            </div>
+
+            <div class="post-actions">
+                <button>Like</button>
+                <button>Comment</button>
+            </div>
+        </div>
+
+        <!-- Example post 2 -->
+        <div class="post">
+            <div class="post-header">
+                <div class="avatar"></div>
+                <div class="username">@user2</div>
+            </div>
+
+            <div class="post-content">
+                Welcome to your new social media app homepage!
+            </div>
+
+            <div class="post-actions">
+                <button>Like</button>
+                <button>Comment</button>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Bottom Menu Navigation -->
+    <nav class="bottombar">
+        <a href="home.html">Home</a>
+        <a href="search.html">Search</a>
+        <a href="create.html">Create</a>
+        <a href="messages.html">Messages</a>
+        <a href="profile.html">Profile</a>
+    </nav>
 
 </body>
 </html>
