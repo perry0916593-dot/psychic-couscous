@@ -1,33 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-    <!-- LOGIN CONTAINER -->
-    <div class="login-container">
-        <h2>Login</h2>
+<div class="top-nav">MySocial</div>
 
-        <form action="home.html" method="get">
-            <div class="input-group">
-                <label>Username</label>
-                <input type="text" name="username" placeholder="Enter username">
-            </div>
-
-            <div class="input-group">
-                <label>Password</label>
-                <input type="password" name="password" placeholder="Enter password">
-            </div>
-
-            <button type="submit" class="login-btn">Login</button>
-        </form>
-
-        <p><a href="index.html" class="back-link">← Back to Welcome</a></p>
-    </div>
+<div class="create-container" style="margin-top: 100px;">
+  <h2 style="text-align:center;">Login</h2>
+  <input type="text" placeholder="Username" style="width:100%;padding:12px;margin-top:10px;border-radius:10px;border:1px solid #ccc;">
+  <input type="password" placeholder="Password" style="width:100%;padding:12px;margin-top:10px;border-radius:10px;border:1px solid #ccc;">
+  
+  <button onclick="window.location.href='home.html'">Login</button>
+</div>
 
 </body>
 </html>
