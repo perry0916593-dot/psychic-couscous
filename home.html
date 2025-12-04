@@ -1,26 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Home • My Social App</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Social Media App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <h2>Home Feed</h2>
+    <header>
+        <h1>Welcome to My Social Media App</h1>
+        <p>Built using only my Android phone!</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
 
-        <!-- Create Post Box -->
-        <div class="card">
-            <h3>Create a Post</h3>
-            <textarea id="postText" placeholder="What's on your mind?"></textarea>
-            <button onclick="createPost()">Post</button>
-        </div>
+    <main>
+        <section class="card">
+            <h2>Connect • Share • Explore</h2>
+            <p>My personal project — building my own social media platform.</p>
 
-        <!-- Posts Display -->
-        <div id="postsArea"></div>
-    </div>
+            <!-- FIXED BUTTON -->
+            <a href="signup.html">
+                <button class="primary-btn">Get Started</button>
+            </a>
+        </section>
+    </main>
 
-    <script src="js/app.js"></script>
+    <footer>
+        <p>© 2025 My Social Media App</p>
+    </footer>
+
 </body>
-</html>
+</html
