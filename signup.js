@@ -1,32 +1,33 @@
-// SIGNUP FORM SCRIPT
-const signupForm = document.getElementById("signupForm");
-const signupBtn = document.getElementById("signupBtn");
+// Firebase imports
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword }
+  from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-signupForm.addEventListener("submit", function (e) {
-    e.preventDefault(); // stop page reload
+// Your Firebase config
+const firebaseConfig = {
+  apiKey: "AIzaSyC8m3pqkOg4sATsImvq0R6ZPl...",
+  authDomain: "my-social-app-c1fb8.firebaseapp.com",
+  projectId: "my-social-app-c1fb8",
+  storageBucket: "my-social-app-c1fb8.firebasestorage.app",
+  messagingSenderId: "618305477782",
+  appId: "1:618305477782:web:209328ea31xxxxxx"
+};
 
-    const fullname = document.getElementById("fullname").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
-    const confirmPassword = document.getElementById("confirmPassword").value.trim();
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
-    // Basic validation
-    if (!fullname || !email || !password || !confirmPassword) {
-        alert("Please fill all fields.");
-        return;
-    }
+// Signup button listener
+document.getElementById("signupBtn").addEventListener("click", () => {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
-    if (password.length < 6) {
-        alert("Password must be at least 6 characters.");
-        return;
-    }
-
-    if (password !== confirmPassword) {
-        alert("Passwords do not match.");
-        return;
-    }
-
-    // If everything is okay
-    alert("Signup successful! Redirecting to login page...");
-    window.location.href = "login.html";
+  createUserWithEmailAndPassword(auth, email, password)
+    .then(() => {
+      alert("Signup successful!");
+      window.location.href = "home.html"; 
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
 });
