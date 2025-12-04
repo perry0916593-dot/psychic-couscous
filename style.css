@@ -1,62 +1,79 @@
-/* -------------------------
-   HOME PAGE STYLING
--------------------------- */
-
-.top-nav {
-    width: 100%;
-    background: #ffffff;
-    padding: 15px 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.app-title {
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f1f1;
     margin: 0;
-    font-size: 22px;
-    font-weight: bold;
-    color: #333;
+    padding: 0;
 }
 
-.home-container {
+/* Login + Home Card */
+.container {
     width: 90%;
     max-width: 400px;
-    margin: auto;
+    background: #fff;
+    margin: 50px auto;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Titles */
+h2, h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Buttons */
+button, .feature-btn {
+    width: 100%;
+    background: #4c6ef5;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-top: 10px;
+    text-decoration: none;
+    display: block;
     text-align: center;
 }
 
-.welcome-title {
-    font-size: 26px;
-    margin-bottom: 10px;
+button:hover, .feature-btn:hover {
+    background: #3b5bdb;
+}
+
+/* Back link */
+.back-link {
+    display: block;
+    margin-top: 15px;
+    text-align: left;
+}
+
+/* Navigation bar */
+.top-nav {
+    width: 100%;
+    background: #fff;
+    padding: 15px 20px;
+    text-align: center;
     font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.welcome-text {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 25px;
-}
-
+/* Home buttons grid */
 .button-grid {
     display: grid;
     gap: 15px;
-}
-
-.feature-btn {
-    display: block;
-    padding: 14px;
-    background: #4c6ef5;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 500;
-    text-align: center;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-}
-
-.feature-btn:hover {
-    background: #3b5bdb;
+    margin-top: 20px;
 }
 
 .logout-btn {
