@@ -1,52 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
   <link rel="stylesheet" href="style.css">
-  <script src="app.js" defer></script>
 </head>
+
 <body>
 
-<div class="header">
-  <div class="title">My Social App</div>
-  <div class="controls">
-    <button class="toggle-btn" onclick="toggleTheme()">Toggle</button>
-    <a href="create.html" class="toggle-btn">Create</a>
+<div class="top-nav">MySocial</div>
+
+<!-- Example Post -->
+<div class="post" style="margin-top: 80px;">
+  <div class="post-header">
+    <img src="https://i.ibb.co/8rNNPdh/user.png">
+    <span class="post-username">John Doe</span>
+  </div>
+
+  <div class="post-content">
+    This is my first post on this amazing platform!
   </div>
 </div>
 
-<div class="container">
-
-  <!-- Stories -->
-  <div class="stories" id="stories">
-    <div class="story">
-      <div class="circle"><img src="https://i.pravatar.cc/100?img=1" alt=""></div>
-      <div>@alice</div>
-    </div>
-    <div class="story">
-      <div class="circle"><img src="https://i.pravatar.cc/100?img=2" alt=""></div>
-      <div>@bob</div>
-    </div>
-    <div class="story">
-      <div class="circle"><img src="https://i.pravatar.cc/100?img=3" alt=""></div>
-      <div>@chris</div>
-    </div>
-  </div>
-
-  <!-- Feed list -->
-  <div id="feed-list"></div>
-
-</div>
-
-<!-- bottom nav -->
+<!-- Bottom Navigation -->
 <div class="bottom-nav">
-  <a href="home.html" class="active">Home</a>
-  <a href="search.html">Search</a>
-  <a href="create.html">Create</a>
-  <a href="messages.html">Messages</a>
-  <a href="profile.html">Profile</a>
+  <a href="home.html">
+    <img src="https://i.ibb.co/Y8Mq1tT/home.png">Home
+  </a>
+  <a href="search.html">
+    <img src="https://i.ibb.co/5cLpn7T/search.png">Search
+  </a>
+  <a href="create.html">
+    <img src="https://i.ibb.co/4p1LZV3/add.png">Post
+  </a>
+  <a href="messages.html">
+    <img src="https://i.ibb.co/HxvqzNf/message.png">Messages
+  </a>
+  <a href="profile.html">
+    <img src="https://i.ibb.co/8rNNPdh/user.png">Profile
+  </a>
 </div>
 
 </body>
