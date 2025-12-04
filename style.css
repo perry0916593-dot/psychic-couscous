@@ -1,116 +1,70 @@
-/* GENERAL PAGE STYLE */
+/* ===== GENERAL ===== */
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background: #f2f3f5;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f2f2;
 }
 
-/* TOP BAR */
-.topbar {
+/* ===== CENTER CONTAINER ===== */
+.container {
+    width: 90%;
+    max-width: 420px;
     background: #ffffff;
-    padding: 15px;
+    margin: 60px auto;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     text-align: center;
-    font-size: 22px;
+}
+
+/* ===== HEADERS ===== */
+h1, h2, h3 {
+    margin-bottom: 15px;
     font-weight: bold;
-    border-bottom: 1px solid #ddd;
-    position: sticky;
-    top: 0;
-    z-index: 10;
 }
 
-/* CREATE POST BOX */
-.create-post {
-    padding: 15px;
-    background: #ffffff;
-    margin: 10px;
-    border-radius: 10px;
-}
-
-.create-post textarea {
-    width: 100%;
-    height: 80px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
-    font-size: 15px;
-    resize: none;
-}
-
-.create-post button {
-    margin-top: 10px;
-    width: 100%;
+/* ===== INPUT FIELDS ===== */
+input, textarea {
+    width: 92%;
     padding: 12px;
-    background: #1877f2;
-    color: white;
-    border: none;
+    margin: 10px 0;
+    border: 1px solid #ddd;
     border-radius: 8px;
+    outline: none;
     font-size: 16px;
 }
 
-/* FEED POSTS */
-.feed {
-    padding: 10px;
+textarea {
+    height: 120px;
+    resize: none;
 }
 
-.post {
-    background: #ffffff;
-    padding: 15px;
-    border-radius: 12px;
-    margin-bottom: 15px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.post-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.avatar {
-    width: 40px;
-    height: 40px;
-    background: #bbb;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.username {
-    font-weight: bold;
-}
-
-/* POST CONTENT */
-.post-content {
-    margin: 10px 0;
-    font-size: 15px;
-}
-
-/* POST ACTIONS */
-.post-actions button {
-    margin-right: 10px;
-    padding: 8px 15px;
+/* ===== BUTTONS ===== */
+button,
+.btn {
+    width: 95%;
+    padding: 14px;
+    margin-top: 12px;
+    background: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
     border: none;
     border-radius: 8px;
-    background: #eee;
     cursor: pointer;
 }
 
-/* BOTTOM NAVIGATION BAR */
-.bottombar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #ffffff;
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-around;
-    border-top: 1px solid #ddd;
+button:hover,
+.btn:hover {
+    opacity: 0.85;
 }
 
-.bottombar a {
-    text-decoration: none;
-    color: #333;
-    font-size: 14px;
-    text-align: center;
+/* ===== CARD (Home Page Post Box) ===== */
+.card {
+    background: #fafafa;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 12px;
+    border: 1px solid #e6e6e6;
 }
