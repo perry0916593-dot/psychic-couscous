@@ -1,35 +1,28 @@
-// Import Firebase
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-// Your Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCgm3pqkOg4sATsImvq0R6ZPHN2ob5W4HQ",
-  authDomain: "my-social-app-c1fb8.firebaseapp.com",
-  projectId: "my-social-app-c1fb8",
-  storageBucket: "my-social-app-c1fb8.firebasestorage.app",
-  messagingSenderId: "618305477782",
-  appId: "1:618305477782:web:209328eae31c0c50dc162a"
+    apiKey: "AIzaSyA7IfFz1-VdHYVEBzNv3toWV2Js8oPMS1Q",
+    authDomain: "c1fb8.firebaseapp.com",
+    projectId: "c1fb8",
+    storageBucket: "c1fb8.appspot.com",
+    messagingSenderId: "324868107508",
+    appId: "1:324868107508:web:3c2ebe37c700bd9a4b4e44"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Signup Button
 document.getElementById("signupBtn").addEventListener("click", () => {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-  const message = document.getElementById("message");
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
 
-  createUserWithEmailAndPassword(auth, email, password)
-    .then(() => {
-      message.innerHTML = "Signup Successful!";
-      message.style.color = "green";
-      window.location.href = "login.html"; 
-    })
-    .catch((error) => {
-      message.innerHTML = error.message;
-      message.style.color = "red";
-    });
+    createUserWithEmailAndPassword(auth, email, password)
+        .then(() => {
+            alert("Account created successfully!");
+            window.location.href = "home.html";
+        })
+        .catch(error => {
+            alert(error.message);
+        });
 });
