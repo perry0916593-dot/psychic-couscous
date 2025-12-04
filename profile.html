@@ -3,42 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Your Profile</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="topbar">My Profile</div>
+    <div class="container">
+        <h2>Your Profile</h2>
 
-<div class="profile-header">
-    <div class="profile-avatar"></div>
+        <p id="userEmail" style="font-weight: bold;"></p>
 
-    <h2 class="profile-name">Your Name</h2>
-    <p class="profile-username">@username</p>
+        <input type="text" id="username" placeholder="Username">
 
-    <button class="edit-profile-btn">Edit Profile</button>
-</div>
+        <textarea id="bio" placeholder="Write something about you..." style="width:100%; height:80px; margin:10px 0;"></textarea>
 
-<div class="profile-stats">
-    <div><strong>120</strong><br>Posts</div>
-    <div><strong>450</strong><br>Followers</div>
-    <div><strong>380</strong><br>Following</div>
-</div>
+        <label>Profile Photo:</label>
+        <input type="file" id="profilePic">
 
-<div class="feed">
-    <div class="post">
-        <div class="post-header">
-            <div class="avatar"></div>
-            <div class="username">Your Name</div>
-        </div>
-        <div class="post-content">
-            This is your latest post!
-        </div>
-        <div class="post-actions">
-            <button>Like</button>
-            <button>Comment</button>
-        </div>
+        <button id="saveBtn">Save Profile</button>
+        <button id="logoutBtn" style="margin-top:10px; background:red;">Logout</button>
     </div>
-</div>
 
-<div class="b
+    <script type="module" src="profile.js"></script>
+</body>
+</html>
