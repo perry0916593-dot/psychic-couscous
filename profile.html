@@ -3,60 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile - My Social App</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="topbar">
-    <h1>My Profile</h1>
-</div>
+<div class="topbar">My Profile</div>
 
 <div class="profile-header">
-    <img src="https://via.placeholder.com/90" class="profile-pic">
+    <div class="profile-avatar"></div>
+
     <h2 class="profile-name">Your Name</h2>
-    <p class="profile-username">@your_username</p>
+    <p class="profile-username">@username</p>
+
+    <button class="edit-profile-btn">Edit Profile</button>
 </div>
 
 <div class="profile-stats">
-    <div class="stat-box">
-        <h3>120</h3>
-        <p>Posts</p>
+    <div><strong>120</strong><br>Posts</div>
+    <div><strong>450</strong><br>Followers</div>
+    <div><strong>380</strong><br>Following</div>
+</div>
+
+<div class="feed">
+    <div class="post">
+        <div class="post-header">
+            <div class="avatar"></div>
+            <div class="username">Your Name</div>
+        </div>
+        <div class="post-content">
+            This is your latest post!
+        </div>
+        <div class="post-actions">
+            <button>Like</button>
+            <button>Comment</button>
+        </div>
     </div>
-    <div class="stat-box">
-        <h3>530</h3>
-        <p>Followers</p>
-    </div>
-    <div class="stat-box">
-        <h3>280</h3>
-        <p>Following</p>
-    </div>
 </div>
 
-<div class="profile-bio">
-    <p>Upcoming developer building apps using my Android phone 📱🚀</p>
-</div>
-
-<h2 class="section-title">Your Posts</h2>
-
-<div class="posts-grid">
-
-    <div class="post-box"></div>
-    <div class="post-box"></div>
-    <div class="post-box"></div>
-    <div class="post-box"></div>
-    <div class="post-box"></div>
-    <div class="post-box"></div>
-
-</div>
-
-<div class="bottombar">
-    <a href="home.html" class="nav-item">Home</a>
-    <a href="search.html" class="nav-item">Search</a>
-    <a href="create.html" class="nav-item">Create</a>
-    <a href="messages.html" class="nav-item">Messages</a>
-    <a href="profile.html" class="nav-item active">Profile</a>
-</div>
-
-</body>
-</html>
+<div class="b
