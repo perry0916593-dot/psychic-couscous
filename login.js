@@ -1,34 +1,18 @@
-// Firebase imports
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { auth, signInWithEmailAndPassword } from "./firebase.js";
 
-// Your Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyCg3mpqkOg4sATsIXXXXXXXX",
-  authDomain: "my-social-app-c1fb8.firebaseapp.com",
-  projectId: "my-social-app-c1fb8",
-  storageBucket: "my-social-app-c1fb8.appspot.com",
-  messagingSenderId: "618305477782",
-  appId: "1:618305477782:web:85bd2c41c9a717d8a876"
-};
+const form = document.getElementById("loginForm");
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
-// Login function
-document.getElementById("loginForm").addEventListener("submit", function (e) {
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  signInWithEmailAndPassword(auth, email, password)
-    .then(() => {
-      alert("Login successful!");
-      window.location.href = "home.html"; 
-    })
-    .catch((error) => {
-      alert(error.message);
-    });
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+    alert("Login successful!");
+    window.location.href = "home.html"; // Redirect to your home page
+  } catch (error) {
+    alert("Error: " + error.message);
+  }
 });
