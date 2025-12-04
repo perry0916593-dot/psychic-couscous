@@ -1,72 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social App - Home</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Home • My Social App</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-    <!-- Top Navigation Bar -->
-    <header class="topbar">
-        <h1>MySocial</h1>
-    </header>
+    <div class="container">
+        <h2>Home Feed</h2>
 
-    <!-- Create Post Section -->
-    <section class="create-post">
-        <textarea placeholder="What's on your mind?"></textarea>
-        <button>Post</button>
-    </section>
-
-    <!-- Feed Section -->
-    <section class="feed">
-
-        <!-- Example post 1 -->
-        <div class="post">
-            <div class="post-header">
-                <div class="avatar"></div>
-                <div class="username">@user1</div>
-            </div>
-
-            <div class="post-content">
-                This is an example post. Your real posts will appear here later.
-            </div>
-
-            <div class="post-actions">
-                <button>Like</button>
-                <button>Comment</button>
-            </div>
+        <!-- Create Post Box -->
+        <div class="card">
+            <h3>Create a Post</h3>
+            <textarea id="postText" placeholder="What's on your mind?"></textarea>
+            <button onclick="createPost()">Post</button>
         </div>
 
-        <!-- Example post 2 -->
-        <div class="post">
-            <div class="post-header">
-                <div class="avatar"></div>
-                <div class="username">@user2</div>
-            </div>
+        <!-- Posts Display -->
+        <div id="postsArea"></div>
+    </div>
 
-            <div class="post-content">
-                Welcome to your new social media app homepage!
-            </div>
-
-            <div class="post-actions">
-                <button>Like</button>
-                <button>Comment</button>
-            </div>
-        </div>
-
-    </section>
-
-    <!-- Bottom Menu Navigation -->
-    <nav class="bottombar">
-        <a href="home.html">Home</a>
-        <a href="search.html">Search</a>
-        <a href="create.html">Create</a>
-        <a href="messages.html">Messages</a>
-        <a href="profile.html">Profile</a>
-    </nav>
-
+    <script src="js/app.js"></script>
 </body>
 </html>
