@@ -12,8 +12,29 @@
     <h1>Search</h1>
 </div>
 
+<div class="search-box">
+    <input type="text" placeholder="Search users, posts..." class="search-input">
+</div>
+
 <div class="container">
-    <input type="text" class="search-box" placeholder="Search users, posts...">
+
+    <h3 class="section-title">Trending</h3>
+
+    <div class="user-card">
+        <img src="https://via.placeholder.com/50" class="user-pic">
+        <p class="username">@john_doe</p>
+    </div>
+
+    <div class="user-card">
+        <img src="https://via.placeholder.com/50" class="user-pic">
+        <p class="username">@mary_dev</p>
+    </div>
+
+    <div class="user-card">
+        <img src="https://via.placeholder.com/50" class="user-pic">
+        <p class="username">@cool_guy</p>
+    </div>
+
 </div>
 
 <div class="bottombar">
