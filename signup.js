@@ -1,34 +1,31 @@
-// Firebase imports
+// Import Firebase functions
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 // Your Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCg3mpqkOg4sATsIXXXXXXXX",
-  authDomain: "my-social-app-c1fb8.firebaseapp.com",
-  projectId: "my-social-app-c1fb8",
-  storageBucket: "my-social-app-c1fb8.appspot.com",
-  messagingSenderId: "618305477782",
-  appId: "1:618305477782:web:85bd2c41c9a717d8a876"
+  apiKey: "AIzaSyCg m3pqkOg4sATsI...", 
+  authDomain: "my-social-app-c1fb....firebaseapp.com",
+  projectId: "my-social-app-c1fb...",
+  storageBucket: "my-social-app-c1fb....appspot.com",
+  messagingSenderId: "61830547782",
+  appId: "1:61830547782:web:94e..."
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Signup function
-document.getElementById("signupForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+// Handle Signup
+document.getElementById("signupBtn").addEventListener("click", () => {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-
-  createUserWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth, email, password)
     .then(() => {
-      alert("Signup successful! Redirecting...");
-      window.location.href = "login.html"; 
+        document.getElementById("message").innerText = "Account created successfully!";
     })
     .catch((error) => {
-      alert(error.message);
+        document.getElementById("message").innerText = error.message;
     });
 });
