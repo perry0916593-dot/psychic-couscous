@@ -1,22 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Login</h2>
 
-    <form action="home.html" method="GET">
-        <label>Username</label>
-        <input type="text" name="username" placeholder="Enter username">
+    <!-- LOGIN CONTAINER -->
+    <div class="login-container">
+        <h2>Login</h2>
 
-        <label>Password</label>
-        <input type="password" name="password" placeholder="Enter password">
+        <form action="home.html" method="get">
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" name="username" placeholder="Enter username">
+            </div>
 
-        <button type="submit">Login</button>
-    </form>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Enter password">
+            </div>
 
-    <a href="index.html">← Back to Welcome</a>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+
+        <p><a href="index.html" class="back-link">← Back to Welcome</a></p>
+    </div>
+
 </body>
 </html>
