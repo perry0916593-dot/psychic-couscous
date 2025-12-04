@@ -1,77 +1,209 @@
-/* ------- Global Style ------- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
+/* GENERAL PAGE STYLE */
 body {
-  background: #f5f6fa;   /* light background */
-  color: #333;
-  padding-bottom: 70px; /* for bottom navbar */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f1f1;
 }
 
-/* ------- Top Navbar ------- */
-.top-nav {
-  width: 100%;
-  background: #0d1117;   /* Blue-Black */
-  color: white;
-  padding: 15px;
-  font-size: 22px;
-  font-weight: bold;
-  position: fixed;
-  top: 0;
-  left: 0;
-  text-align: center;
-  z-index: 10;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+/* TOP BAR */
+.topbar {
+    background: #ffffff;
+    padding: 15px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
-/* ------- Feed Post Card ------- */
+/* BOTTOM NAV BAR */
+.bottombar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 0;
+}
+
+.nav-item {
+    color: #888;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-item.active {
+    color: #000;
+    font-weight: bold;
+}
+
+/* FEED POST CARDS (HOME PAGE) */
 .post {
-  background: white;
-  width: 90%;
-  margin: 20px auto;
-  border-radius: 12px;
-  padding: 15px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background: #fff;
+    margin: 15px;
+    border-radius: 10px;
+    padding: 15px;
 }
 
 .post-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.post-header img {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
+.post-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
 
-.post-username {
-  font-weight: bold;
-  font-size: 16px;
+.username {
+    font-weight: bold;
 }
 
 .post-content {
-  margin-top: 10px;
-  font-size: 15px;
+    margin-top: 10px;
 }
 
-/* ------- Bottom Navbar ------- */
-.bottom-nav {
-  width: 100%;
-  background: #0d1117; /* Blue-Black */
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  justify-content: space-around;
-  padding: 12px 0;
-  z-index: 20;
-  box-shadow: 0 -2px 8px rgba(0,0,0,0.3);
+.post-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
 }
 
-.bottom-nav a
+.post-actions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn {
+    padding: 8px;
+    background: #eee;
+    border-radius: 5px;
+    text-align: center;
+    width: 30%;
+}
+
+/* SEARCH PAGE */
+.search-box {
+    width: 90%;
+    margin: 15px auto;
+    display: block;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* CREATE PAGE */
+.create-box {
+    width: 90%;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.create-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    background: #000;
+    color: #fff;
+    border: none;
+}
+
+/* MESSAGES PAGE */
+.chat-list {
+    padding-bottom: 70px;
+}
+
+.chat-card {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    margin: 10px;
+    border-radius: 10px;
+    gap: 12px;
+}
+
+.chat-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.chat-username {
+    font-weight: bold;
+}
+
+.chat-lastmsg {
+    font-size: 14px;
+    color: #444;
+}
+
+/* PROFILE PAGE */
+.profile-header {
+    text-align: center;
+    padding: 20px;
+}
+
+.profile-pic {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+
+.profile-name {
+    margin: 10px 0 0;
+    font-size: 22px;
+}
+
+.profile-username {
+    color: #555;
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: space-around;
+    background: #fff;
+    padding: 15px 0;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.stat-box h3 {
+    margin: 0;
+}
+
+.profile-bio {
+    background: #fff;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.section-title {
+    margin-left: 15px;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    padding: 10px;
+}
+
+.post-box {
+    background: #ccc;
+    height: 120px;
+    border-radius: 8px;
+  }
