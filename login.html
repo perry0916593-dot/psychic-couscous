@@ -1,36 +1,31 @@
-<!-- Firebase -->
-<script type="module">
-  // Import Firebase SDK
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-  import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-  // Your Firebase configuration
-  const firebaseConfig = {
-    apiKey: "YOUR_API_KEY_HERE",
-    authDomain: "YOUR_AUTH_DOMAIN_HERE",
-    projectId: "YOUR_PROJECT_ID_HERE",
-    storageBucket: "YOUR_STORAGE_BUCKET_HERE",
-    messagingSenderId: "YOUR_SENDER_ID_HERE",
-    appId: "YOUR_APP_ID_HERE"
-  };
+    <header>
+        <h1>Login</h1>
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
 
-  // Login function
-  document.getElementById("loginForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+    <section class="form-box">
+        <h2>Sign In</h2>
 
-    const email = document.getElementById("emailInput").value;
-    const password = document.getElementById("passwordInput").value;
+        <form>
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
 
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        window.location.href = "home.html"; // Redirect after login
-      })
-      .catch((error) => {
-        alert("Login failed: " + error.message);
-      });
-  });
-</script>
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+</body>
+</html>
