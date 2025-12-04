@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup • My Social App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+    <div class="container">
+        <h2>Create Account</h2>
+
+        <!-- Name -->
+        <input type="text" id="name" placeholder="Full Name">
+
+        <!-- Email -->
+        <input type="email" id="email" placeholder="Email">
+
+        <!-- Password -->
+        <input type="password" id="password" placeholder="Password">
+
+        <!-- Signup Button -->
+        <button id="signupBtn">Sign Up</button>
+
+        <!-- Google Signup -->
+        <button id="googleBtn" class="google-btn">
+            Continue with Google
+        </button>
+
+        <p>
+            Already have an account?
+            <a href="login.html">Login</a>
+        </p>
+    </div>
+
+    <!-- Firebase -->
+    <script type="module" src="firebase.js"></script>
+
+    <!-- Signup Logic -->
+    <script type="module" src="signup.js"></script>
+
+</body>
+</html>
