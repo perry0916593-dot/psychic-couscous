@@ -12,16 +12,30 @@
     <h1>Messages</h1>
 </div>
 
-<div class="container">
+<div class="container chat-list">
 
-    <div class="message-card">
-        <p class="message-user">@demo_user</p>
-        <p class="message-text">Hey! Welcome to your inbox 👋</p>
+    <div class="chat-card">
+        <img src="https://via.placeholder.com/50" class="chat-pic">
+        <div>
+            <p class="chat-username">@john_doe</p>
+            <p class="chat-lastmsg">Hey! How are you doing?</p>
+        </div>
     </div>
 
-    <div class="message-card">
-        <p class="message-user">@another_user</p>
-        <p class="message-text">Let’s test your messaging page!</p>
+    <div class="chat-card">
+        <img src="https://via.placeholder.com/50" class="chat-pic">
+        <div>
+            <p class="chat-username">@mary_dev</p>
+            <p class="chat-lastmsg">Did you finish the project?</p>
+        </div>
+    </div>
+
+    <div class="chat-card">
+        <img src="https://via.placeholder.com/50" class="chat-pic">
+        <div>
+            <p class="chat-username">@cool_guy</p>
+            <p class="chat-lastmsg">Check this out 😂🔥</p>
+        </div>
     </div>
 
 </div>
