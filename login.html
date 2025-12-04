@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - MySocial</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="login-page">
 
-<div class="top-nav">MySocial</div>
+    <div class="login-container">
+        <h1 class="app-title">MySocial</h1>
 
-<div class="create-container" style="margin-top: 100px;">
-  <h2 style="text-align:center;">Login</h2>
-  <input type="text" placeholder="Username" style="width:100%;padding:12px;margin-top:10px;border-radius:10px;border:1px solid #ccc;">
-  <input type="password" placeholder="Password" style="width:100%;padding:12px;margin-top:10px;border-radius:10px;border:1px solid #ccc;">
-  
-  <button onclick="window.location.href='home.html'">Login</button>
-</div>
+        <div class="login-box">
+            <h2>Login</h2>
+
+            <input type="text" placeholder="Username" class="input">
+            <input type="password" placeholder="Password" class="input">
+
+            <button class="btn" onclick="location.href='home.html'">Login</button>
+        </div>
+
+        <p class="bottom-text">
+            Don't have an account? <a href="create.html">Create one</a>
+        </p>
+    </div>
 
 </body>
 </html>
