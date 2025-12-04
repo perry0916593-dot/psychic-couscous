@@ -1,12 +1,77 @@
-/* Fix logout button position */
-.logout-btn {
-    background: #ff3b30;
-    color: white;
-    padding: 10px 18px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 14px;
-    float: right;
-    margin-top: -45px;
-    margin-right: 10px;
+/* ------- Global Style ------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
+
+body {
+  background: #f5f6fa;   /* light background */
+  color: #333;
+  padding-bottom: 70px; /* for bottom navbar */
+}
+
+/* ------- Top Navbar ------- */
+.top-nav {
+  width: 100%;
+  background: #0d1117;   /* Blue-Black */
+  color: white;
+  padding: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* ------- Feed Post Card ------- */
+.post {
+  background: white;
+  width: 90%;
+  margin: 20px auto;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.post-header img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.post-username {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.post-content {
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+/* ------- Bottom Navbar ------- */
+.bottom-nav {
+  width: 100%;
+  background: #0d1117; /* Blue-Black */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 0;
+  z-index: 20;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.3);
+}
+
+.bottom-nav a
