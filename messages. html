@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Messages</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages - My Social App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="top-nav">Messages</div>
-
-<div class="message-card">
-  <img src="https://i.ibb.co/8rNNPdh/user.png">
-  <div>
-    <b>Sarah</b><br>
-    Hey, how are you?
-  </div>
+<div class="topbar">
+    <h1>Messages</h1>
 </div>
 
-<div class="bottom-nav">
-  <a href="home.html"><img src="https://i.ibb.co/Y8Mq1tT/home.png">Home</a>
-  <a href="search.html"><img src="https://i.ibb.co/5cLpn7T/search.png">Search</a>
-  <a href="create.html"><img src="https://i.ibb.co/4p1LZV3/add.png">Post</a>
-  <a href="messages.html"><img src="https://i.ibb.co/HxvqzNf/message.png">Messages</a>
-  <a href="profile.html"><img src="https://i.ibb.co/8rNNPdh/user.png">Profile</a>
+<div class="container">
+
+    <div class="message-card">
+        <p class="message-user">@demo_user</p>
+        <p class="message-text">Hey! Welcome to your inbox 👋</p>
+    </div>
+
+    <div class="message-card">
+        <p class="message-user">@another_user</p>
+        <p class="message-text">Let’s test your messaging page!</p>
+    </div>
+
+</div>
+
+<div class="bottombar">
+    <a href="home.html" class="nav-item">Home</a>
+    <a href="search.html" class="nav-item">Search</a>
+    <a href="create.html" class="nav-item">Create</a>
+    <a href="messages.html" class="nav-item active">Messages</a>
+    <a href="profile.html" class="nav-item">Profile</a>
 </div>
 
 </body>
