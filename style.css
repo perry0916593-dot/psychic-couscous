@@ -223,3 +223,43 @@ body.dark button {
     font-size: 18px;
   }
   }
+/* ============================
+   TYPING INDICATOR
+   ============================ */
+.typing {
+  width: fit-content;
+  padding: 8px 14px;
+  background: #ddd;
+  color: #333;
+  font-size: 13px;
+  border-radius: 20px;
+  margin: 5px 10px;
+  animation: fadeIn 0.3s ease;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* ============================
+   MESSAGE TIME STYLE
+   ============================ */
+.msg-time {
+  display: block;
+  text-align: right;
+  font-size: 11px;
+  color: #555;
+  margin-top: 4px;
+}
+
+/* ============================
+   BUBBLE ANIMATION
+   ============================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
