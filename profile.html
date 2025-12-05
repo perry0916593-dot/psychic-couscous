@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Profile</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile - My Social App</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <div class="container">
-        <h2>Your Profile</h2>
+<header>
+    <h1>Your Profile</h1>
+</header>
 
-        <p id="userEmail" style="font-weight: bold;"></p>
+<main>
+    <img src="profile.png" class="profile-pic" alt="Profile Picture">
+    <h2>Perry</h2>
+    <p>Upcoming developer building apps using only a phone.</p>
 
-        <input type="text" id="username" placeholder="Username">
+    <button class="btn">Edit Profile</button>
+</main>
 
-        <textarea id="bio" placeholder="Write something about you..." style="width:100%; height:80px; margin:10px 0;"></textarea>
+<nav class="bottom-nav">
+    <a href="home.html" class="nav-item">Home</a>
+    <a href="search.html" class="nav-item">Search</a>
+    <a href="create.html" class="nav-item">Create</a>
+    <a href="messages.html" class="nav-item">Messages</a>
+    <a href="profile.html" class="nav-item active">Profile</a>
+</nav>
 
-        <label>Profile Photo:</label>
-        <input type="file" id="profilePic">
-
-        <button id="saveBtn">Save Profile</button>
-        <button id="logoutBtn" style="margin-top:10px; background:red;">Logout</button>
-    </div>
-
-    <script type="module" src="profile.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
