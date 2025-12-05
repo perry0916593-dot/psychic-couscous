@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2 id="chatUser">Chat</h2>
+
+  <div id="messagesBox"></div>
+
+  <div id="input-area">
+    <input type="text" id="messageInput" placeholder="Type a message...">
+    <button id="sendBtn">Send</button>
+  </div>
+
+  <script src="firebase.js"></script>
+  <script src="messages.js"></script>
+
+</body>
+</html>
