@@ -276,3 +276,6 @@ body.dark {
 .dark .post {
     background: #222;
 }
+<button onclick="document.body.classList.toggle('dark')" class="btn">
+    Toggle Dark Mode
+</button>
