@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create - My Social App</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -13,8 +13,8 @@
 </header>
 
 <main>
-    <textarea placeholder="What's on your mind?" class="post-box"></textarea>
-    <button class="btn">Post</button>
+    <textarea id="postText" placeholder="What's on your mind?" class="post-box"></textarea>
+    <button class="btn" onclick="createPost(document.getElementById('postText').value)">Post</button>
 </main>
 
 <nav class="bottom-nav">
