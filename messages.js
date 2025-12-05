@@ -1,36 +1,40 @@
-// =========================
-//  SHOW USER'S LOCATION NAME
-// =========================
-document.addEventListener("DOMContentLoaded", () => {
-    const locationName = localStorage.getItem("locationName") || "World";
-    document.getElementById("locationDisplay").textContent = locationName;
-});
+import { 
+    getDatabase, ref, push, onValue 
+} from "https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js";
 
+import { app } from "./firebase.js";
 
-// =========================
-//  SEND A MESSAGE
-// =========================
-const messageForm = document.getElementById("message-form");
-const messageInput = document.getElementById("message-input");
-const messagesList = document.getElementById("messages-list");
+const db = getDatabase(app);
+const messagesRef = ref(db, "messages");
 
-messageForm.addEventListener("submit", (e) => {
-    e.preventDefault();
+// Elements
+const sendBtn = document.getElementById("sendBtn");
+const messageText = document.getElementById("messageText");
+const messagesList = document.getElementById("messagesList");
 
-    const text = messageInput.value.trim();
+// Send message
+sendBtn.addEventListener("click", () => {
+    const text = messageText.value.trim();
     if (text === "") return;
 
-    // Create message bubble
-    const bubble = document.createElement("div");
-    bubble.classList.add("message-bubble");
-    bubble.textContent = text;
+    push(messagesRef, {
+        text: text,
+        time: Date.now()
+    });
 
-    // Add to the list
-    messagesList.appendChild(bubble);
+    messageText.value = "";
+});
 
-    // Auto scroll down
-    messagesList.scrollTop = messagesList.scrollHeight;
+// Load messages in real time
+onValue(messagesRef, (snapshot) => {
+    messagesList.innerHTML = "";
+    snapshot.forEach((msg) => {
+        const data = msg.val();
 
-    // Clear input box
-    messageInput.value = "";
+        const bubble = document.createElement("div");
+        bubble.classList.add("message-bubble");
+        bubble.innerText = data.text;
+
+        messagesList.appendChild(bubble);
+    });
 });
