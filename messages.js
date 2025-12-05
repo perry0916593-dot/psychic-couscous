@@ -1,41 +1,38 @@
+import { db, auth } from "./firebase.js";
 import { 
-    collection, 
-    addDoc, 
-    onSnapshot, 
-    serverTimestamp, 
-    query, 
-    orderBy 
+    collection, addDoc, serverTimestamp, query, orderBy, onSnapshot 
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-const db = window.db;
-
-const messageInput = document.getElementById("messageInput");
-const sendBtn = document.getElementById("sendBtn");
 const messagesList = document.getElementById("messagesList");
+const messageInput = document.getElementById("messageInput");
+const sendMessageBtn = document.getElementById("sendMessageBtn");
 
-// SEND MESSAGE
-sendBtn.addEventListener("click", async () => {
+sendMessageBtn.addEventListener("click", async () => {
     const text = messageInput.value.trim();
-    if (text === "") return;
+    const user = auth.currentUser;
+
+    if (!text || !user) return;
 
     await addDoc(collection(db, "messages"), {
         text: text,
-        createdAt: serverTimestamp()
+        userId: user.uid,
+        timestamp: serverTimestamp()
     });
 
     messageInput.value = "";
 });
 
-// DISPLAY MESSAGES LIVE
-const q = query(collection(db, "messages"), orderBy("createdAt"));
+// Load messages live
+const q = query(collection(db, "messages"), orderBy("timestamp", "asc"));
 
 onSnapshot(q, (snapshot) => {
     messagesList.innerHTML = "";
+
     snapshot.forEach((doc) => {
-        let message = doc.data();
-        let div = document.createElement("div");
-        div.className = "message-box";
-        div.textContent = message.text;
+        const msg = doc.data();
+        const div = document.createElement("div");
+        div.classList.add("message-bubble");
+        div.innerHTML = `<p>${msg.text}</p>`;
         messagesList.appendChild(div);
     });
 });
