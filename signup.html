@@ -1,31 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Signup</title>
 </head>
 <body>
 
-    <div class="container">
-        <h2>Create Account</h2>
+    <h2>Create Account</h2>
 
-        <form id="signupForm">
-            <input type="text" id="username" placeholder="Username" required>
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="password" id="password" placeholder="Password" required>
+    <form id="signup-form">
+        <input type="email" id="email" placeholder="Email" required><br><br>
+        <input type="password" id="password" placeholder="Password" required><br><br>
 
-            <button type="submit">Sign Up</button>
-        </form>
+        <button type="submit">Signup</button>
+    </form>
 
-        <p>Already have an account? <a href="login.html">Login</a></p>
-    </div>
+    <p>Already have an account? <a href="login.html">Login</a></p>
 
-    <!-- 1️⃣ Load Firebase config -->
-    <script type="module" src="firebase.js"></script>
-
-    <!-- 2️⃣ Load signup function -->
     <script type="module" src="signup.js"></script>
 
 </body>
