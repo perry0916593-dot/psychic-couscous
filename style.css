@@ -1,93 +1,60 @@
-/* Default Light Mode */
-:root {
-    --bg: #ffffff;
-    --text: #000000;
-    --topbar: #f2f2f2;
-    --bottombar: #f2f2f2;
+/* BASIC RESET */
+body, h1, h2, p, a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
 }
 
-/* Dark Mode */
-.dark {
-    --bg: #0d0d0d;
-    --text: #ffffff;
-    --topbar: #1a1a1a;
-    --bottombar: #1a1a1a;
-}
-
+/* BODY */
 body {
-    margin: 0;
-    padding: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  padding-bottom: 70px; /* space for bottom nav */
 }
 
-/* Top bar */
-.topbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: var(--topbar);
-    padding: 12px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold;
+/* HEADER */
+header {
+  background: #111;
+  padding: 15px;
+  text-align: center;
+  color: white;
 }
 
-.logo {
-    margin: 0;
+/* MAIN */
+main {
+  padding: 15px;
+  text-align: center;
 }
 
-/* Light/Dark button */
-.theme-btn {
-    background: none;
-    border: none;
-    font-size: 22px;
-    cursor: pointer;
+/* BOTTOM NAVIGATION */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: white;
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 100;
 }
 
-/* Page content */
-.content {
-    padding: 100px 20px 80px;
-    text-align: center;
+.nav-item {
+  font-size: 22px;
+  color: #444;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Bottom Navigation Bar */
-.bottombar {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background: var(--bottombar);
-    display: flex;
-    justify-content: space-around;
-    padding: 10px 0;
-    border-top: 1px solid #aaa;
+.nav-item span {
+  font-size: 12px;
 }
 
-.nav-btn {
-    background: none;
-    border: none;
-    font-size: 22px;
-    color: var(--text);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.nav-btn span {
-    font-size: 12px;
-}
-
-.nav-btn.active {
-    color: #ff0050; /* TikTok pink */
-}
-
-/* Upload big button */
-.upload-btn {
-    font-size: 28px;
-    background: #ff0050;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 10px;
+/* Middle Create Button */
+.create-btn {
+  font-size: 28px;
+  color: #ff0000;
 }
