@@ -1,38 +1,36 @@
-import { db, auth } from "./firebase.js";
-import { 
-    collection, addDoc, serverTimestamp, query, orderBy, onSnapshot 
-} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-const messagesList = document.getElementById("messagesList");
-const messageInput = document.getElementById("messageInput");
-const sendMessageBtn = document.getElementById("sendMessageBtn");
-
-sendMessageBtn.addEventListener("click", async () => {
-    const text = messageInput.value.trim();
-    const user = auth.currentUser;
-
-    if (!text || !user) return;
-
-    await addDoc(collection(db, "messages"), {
-        text: text,
-        userId: user.uid,
-        timestamp: serverTimestamp()
-    });
-
-    messageInput.value = "";
+// =========================
+//  SHOW USER'S LOCATION NAME
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
+    const locationName = localStorage.getItem("locationName") || "World";
+    document.getElementById("locationDisplay").textContent = locationName;
 });
 
-// Load messages live
-const q = query(collection(db, "messages"), orderBy("timestamp", "asc"));
 
-onSnapshot(q, (snapshot) => {
-    messagesList.innerHTML = "";
+// =========================
+//  SEND A MESSAGE
+// =========================
+const messageForm = document.getElementById("message-form");
+const messageInput = document.getElementById("message-input");
+const messagesList = document.getElementById("messages-list");
 
-    snapshot.forEach((doc) => {
-        const msg = doc.data();
-        const div = document.createElement("div");
-        div.classList.add("message-bubble");
-        div.innerHTML = `<p>${msg.text}</p>`;
-        messagesList.appendChild(div);
-    });
+messageForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const text = messageInput.value.trim();
+    if (text === "") return;
+
+    // Create message bubble
+    const bubble = document.createElement("div");
+    bubble.classList.add("message-bubble");
+    bubble.textContent = text;
+
+    // Add to the list
+    messagesList.appendChild(bubble);
+
+    // Auto scroll down
+    messagesList.scrollTop = messagesList.scrollHeight;
+
+    // Clear input box
+    messageInput.value = "";
 });
