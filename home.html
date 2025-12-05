@@ -1,45 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - My Social App</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h2>Welcome to Your Social App</h2>
 
-  <p id="userEmail"></p>
+<header>
+    <h1>Home</h1>
+</header>
 
-  <button id="logoutBtn">Logout</button>
+<main>
+    <h2>Latest Posts</h2>
+    <p>No posts yet. Create something!</p>
+</main>
 
-  <!-- Firebase scripts -->
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-  <script src="firebase.js"></script>
+<nav class="bottom-nav">
+    <a href="home.html" class="nav-item active">Home</a>
+    <a href="search.html" class="nav-item">Search</a>
+    <a href="create.html" class="nav-item">Create</a>
+    <a href="messages.html" class="nav-item">Messages</a>
+    <a href="profile.html" class="nav-item">Profile</a>
+</nav>
 
-  <!-- Home JS -->
-  <script src="home.js"></script>
-</body><!-- FRIENDS SIDEBAR -->
-<div id="friends-sidebar">
-  <h3>Your Friends</h3>
-
-  <div class="friend">
-    <img src="https://via.placeholder.com/40" alt="User">
-    <p>John Doe</p>
-  </div>
-
-  <div class="friend">
-    <img src="https://via.placeholder.com/40" alt="User">
-    <p>Emma Rose</p>
-  </div>
-
-  <div class="friend">
-    <img src="https://via.placeholder.com/40" alt="User">
-    <p>Michael Sam</p>
-  </div>
-
-  <div class="friend">
-    <img src="https://via.placeholder.com/40" alt="User">
-    <p>Lisa West</p>
-  </div>
-
-</div>
+<script src="app.js"></script>
+</body>
 </html>
