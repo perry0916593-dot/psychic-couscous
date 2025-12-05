@@ -1,50 +1,41 @@
-import { db } from "./firebase-config.js";
-import { collection, addDoc, serverTimestamp, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-import { getUserLocation } from "./location.js";
+import { 
+    collection, 
+    addDoc, 
+    onSnapshot, 
+    serverTimestamp, 
+    query, 
+    orderBy 
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-// Select elements
-const messageInput = document.getElementById("messageBox");
+const db = window.db;
+
+const messageInput = document.getElementById("messageInput");
 const sendBtn = document.getElementById("sendBtn");
-const messageList = document.getElementById("messageList");
-
-// Firestore collection
-const messagesRef = collection(db, "messages");
+const messagesList = document.getElementById("messagesList");
 
 // SEND MESSAGE
 sendBtn.addEventListener("click", async () => {
     const text = messageInput.value.trim();
     if (text === "") return;
 
-    // Get user location
-    let locationData = await getUserLocation();
-
-    // Save message to Firestore
-    await addDoc(messagesRef, {
+    await addDoc(collection(db, "messages"), {
         text: text,
-        createdAt: serverTimestamp(),
-        location: locationData
+        createdAt: serverTimestamp()
     });
 
     messageInput.value = "";
 });
 
-// LOAD MESSAGES LIVE
-const q = query(messagesRef, orderBy("createdAt", "asc"));
+// DISPLAY MESSAGES LIVE
+const q = query(collection(db, "messages"), orderBy("createdAt"));
+
 onSnapshot(q, (snapshot) => {
-    messageList.innerHTML = "";
+    messagesList.innerHTML = "";
     snapshot.forEach((doc) => {
-        let data = doc.data();
-
-        let li = document.createElement("li");
-        li.className = "message-item";
-
-        li.innerHTML = `
-            <p>${data.text}</p>
-            <span class="location-tag">
-                🌍 ${data.location.city}, ${data.location.country}
-            </span>
-        `;
-
-        messageList.appendChild(li);
+        let message = doc.data();
+        let div = document.createElement("div");
+        div.className = "message-box";
+        div.textContent = message.text;
+        messagesList.appendChild(div);
     });
 });
