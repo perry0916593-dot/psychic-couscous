@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Chat</title>
-  <link rel="stylesheet" href="style.css">
+    <title>Chat</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h2 id="chatUser">Chat</h2>
+    <h2 id="chatUser">Chat Room</h2>
 
-  <div id="messagesBox"></div>
+    <!-- Messages Display Area -->
+    <div id="messagesContainer"></div>
 
-  <div id="input-area">
-    <input type="text" id="messageInput" placeholder="Type a message...">
-    <button id="sendBtn">Send</button>
-  </div>
+    <!-- Form to send message -->
+    <form id="messageForm">
+        <div id="input-area">
+            <input 
+                type="text" 
+                id="messageInput" 
+                placeholder="Type your message..."
+                autocomplete="off" 
+                required
+            >
+            <button type="submit">Send</button>
+        </div>
+    </form>
 
-  <script src="firebase.js"></script>
-  <script src="messages.js"></script>
+    <script src="firebase.js" type="module"></script>
+    <script src="messages.js" type="module"></script>
 
 </body>
 </html>
