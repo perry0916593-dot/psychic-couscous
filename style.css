@@ -332,3 +332,50 @@ body.dark {
     border-radius: 10px;
     font-weight: bold;
    }
+/* MESSAGE PAGE */
+.top-bar {
+    background: #4C4CFF;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.messages-list {
+    height: 70vh;
+    overflow-y: auto;
+    padding: 10px;
+    background: #f1f1f1;
+}
+
+.message-bubble {
+    background: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+}
+
+.message-input-box {
+    display: flex;
+    padding: 10px;
+    background: #ddd;
+}
+
+.message-input-box input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.message-input-box button {
+    margin-left: 10px;
+    padding: 10px 15px;
+    background: #4C4CFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
