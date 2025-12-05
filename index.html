@@ -3,31 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Social Media App</title>
+    <title>Perry Social App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Welcome to My Social Media App</h1>
-        <p>Built using only my Android phone!</p>
+    <!-- Top Navbar -->
+    <header class="topbar">
+        <h1 class="logo">PerryTok</h1>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="login.html">Login</a>
-        </nav>
+        <!-- Light/Dark Mode Toggle -->
+        <button id="themeToggle" class="theme-btn">🌙</button>
     </header>
 
-    <section class="hero">
-        <h2>Connect • Share • Explore</h2>
-        <p>My personal project — building my own social media platform.</p>
+    <!-- Main Content Area -->
+    <div id="pageContent" class="content">
+        <h2>Home</h2>
+        <p>Welcome to your TikTok-style social media app!</p>
+    </div>
 
-        <a class="btn" href="login.html">Get Started</a>
-    </section>
+    <!-- Bottom Navigation -->
+    <nav class="bottombar">
+        <button class="nav-btn active" data-page="home">🏠<span>Home</span></button>
+        <button class="nav-btn" data-page="search">🔍<span>Search</span></button>
+        <button class="nav-btn upload-btn" data-page="upload">➕</button>
+        <button class="nav-btn" data-page="inbox">💬<span>Inbox</span></button>
+        <button class="nav-btn" data-page="profile">👤<span>Profile</span></button>
+    </nav>
 
-    <footer>
-        <p>© 2025 My Social Media App</p>
-    </footer>
-
+    <script src="app.js"></script>
 </body>
 </html>
