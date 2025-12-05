@@ -263,3 +263,16 @@ body.dark button {
     transform: translateY(0);
   }
 }
+/* Dark Mode */
+body.dark {
+    background: #111;
+    color: white;
+}
+
+.dark .bottom-nav {
+    background: #222;
+}
+
+.dark .post {
+    background: #222;
+}
