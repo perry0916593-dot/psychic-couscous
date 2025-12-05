@@ -5,34 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Messages</title>
     <link rel="stylesheet" href="style.css">
-
-    <!-- Firebase -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-        import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-        import { firebaseConfig } from "./firebase-config.js";
-
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        window.db = db; 
-    </script>
 </head>
-
 <body>
 
-    <div class="messages-container">
-
+    <div class="top-bar">
         <h2>Messages</h2>
+    </div>
 
-        <!-- Message output area -->
-        <div id="messagesList" class="messages-list"></div>
+    <div class="messages-list" id="messagesList">
+        <!-- Messages from Firestore will appear here -->
+    </div>
 
-        <!-- Message input -->
-        <div class="message-input-area">
-            <input type="text" id="messageInput" placeholder="Type a message...">
-            <button id="sendBtn">Send</button>
-        </div>
-
+    <div class="message-input-area">
+        <input type="text" id="messageInput" placeholder="Type your message...">
+        <button id="sendMessageBtn">Send</button>
     </div>
 
     <script type="module" src="messages.js"></script>
