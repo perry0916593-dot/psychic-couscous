@@ -1,32 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Chat</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Messages - My Social App</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <h2 id="chatUser">Chat Room</h2>
+<header>
+    <h1>Messages</h1>
+</header>
 
-    <!-- Messages Display Area -->
-    <div id="messagesContainer"></div>
+<main>
+    <ul class="message-list">
+        <li>No messages yet.</li>
+    </ul>
+</main>
 
-    <!-- Form to send message -->
-    <form id="messageForm">
-        <div id="input-area">
-            <input 
-                type="text" 
-                id="messageInput" 
-                placeholder="Type your message..."
-                autocomplete="off" 
-                required
-            >
-            <button type="submit">Send</button>
-        </div>
-    </form>
+<nav class="bottom-nav">
+    <a href="home.html" class="nav-item">Home</a>
+    <a href="search.html" class="nav-item">Search</a>
+    <a href="create.html" class="nav-item">Create</a>
+    <a href="messages.html" class="nav-item active">Messages</a>
+    <a href="profile.html" class="nav-item">Profile</a>
+</nav>
 
-    <script src="firebase.js" type="module"></script>
-    <script src="messages.js" type="module"></script>
-
+<script src="messages.js"></script>
 </body>
 </html>
