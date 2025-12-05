@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select Language</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="language.js"></script>
+</head>
+
+<body class="onboarding-body">
+
+    <div class="onboarding-container">
+        
+        <h2>Select Your Preferred Language</h2>
+        <p class="subtitle">Choose the language you are most comfortable with.</p>
+
+        <select id="languageSelect" class="onboarding-input">
+            <option value="">-- Select Language --</option>
+            <option value="English">English</option>
+            <option value="Spanish">Spanish</option>
+            <option value="French">French</option>
+            <option value="German">German</option>
+            <option value="Italian">Italian</option>
+            <option value="Hindi">Hindi</option>
+            <option value="Arabic">Arabic</option>
+            <option value="Portuguese">Portuguese</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Japanese">Japanese</option>
+        </select>
+
+        <button onclick="saveLanguage()" class="onboarding-btn">Continue</button>
+
+    </div>
+
+</body>
+</html>
