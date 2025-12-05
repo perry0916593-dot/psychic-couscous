@@ -3,20 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Messages</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <div class="top-bar">Messages</div>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        Messages
+    </div>
 
-    <div class="messages-list" id="messagesList"></div>
+    <!-- Messages List -->
+    <div class="messages-list" id="messages-list">
+        <!-- Chat bubbles will appear here -->
+    </div>
 
-    <div class="message-input">
-        <input type="text" id="messageText" placeholder="Type a message...">
+    <!-- Message Input -->
+    <div class="message-input-box">
+        <input type="text" id="messageInput" placeholder="Type a message...">
         <button id="sendBtn">Send</button>
     </div>
 
     <script type="module" src="firebase.js"></script>
     <script type="module" src="messages.js"></script>
+
 </body>
 </html>
