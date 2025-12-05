@@ -1,36 +1,50 @@
-<script type="module">
-  // Import Firebase functions
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-  import { getFirestore, collection, addDoc, getDocs } 
-    from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { db } from "./firebase-config.js";
+import { collection, addDoc, serverTimestamp, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getUserLocation } from "./location.js";
 
-  // Your Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyCgm3pqkOg4sATsImvq0R6ZPNGis4E0Oo",
-    authDomain: "my-social-app-c1fb8.firebaseapp.com",
-    projectId: "my-social-app-c1fb8",
-    storageBucket: "my-social-app-c1fb8.appspot.com",
-    messagingSenderId: "618305477782",
-    appId: "1:618305477782:web:dcc6a8ff6412168e7d48a"
-  };
+// Select elements
+const messageInput = document.getElementById("messageBox");
+const sendBtn = document.getElementById("sendBtn");
+const messageList = document.getElementById("messageList");
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
+// Firestore collection
+const messagesRef = collection(db, "messages");
 
-  // Example: Send a message
-  async function sendMessage(text) {
-    await addDoc(collection(db, "messages"), {
-      message: text,
-      timestamp: Date.now()
+// SEND MESSAGE
+sendBtn.addEventListener("click", async () => {
+    const text = messageInput.value.trim();
+    if (text === "") return;
+
+    // Get user location
+    let locationData = await getUserLocation();
+
+    // Save message to Firestore
+    await addDoc(messagesRef, {
+        text: text,
+        createdAt: serverTimestamp(),
+        location: locationData
     });
-  }
 
-  // Example: Load messages
-  async function loadMessages() {
-    const querySnapshot = await getDocs(collection(db, "messages"));
-    querySnapshot.forEach((doc) => {
-      console.log(doc.data());
+    messageInput.value = "";
+});
+
+// LOAD MESSAGES LIVE
+const q = query(messagesRef, orderBy("createdAt", "asc"));
+onSnapshot(q, (snapshot) => {
+    messageList.innerHTML = "";
+    snapshot.forEach((doc) => {
+        let data = doc.data();
+
+        let li = document.createElement("li");
+        li.className = "message-item";
+
+        li.innerHTML = `
+            <p>${data.text}</p>
+            <span class="location-tag">
+                🌍 ${data.location.city}, ${data.location.country}
+            </span>
+        `;
+
+        messageList.appendChild(li);
     });
-  }
-</script>
+});
