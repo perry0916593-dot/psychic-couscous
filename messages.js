@@ -1,40 +1,39 @@
-import { 
-    getDatabase, ref, push, onValue 
-} from "https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js";
+import { db } from "./firebase.js";
+import { collection, addDoc, onSnapshot, serverTimestamp, query, orderBy } 
+    from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-import { app } from "./firebase.js";
-
-const db = getDatabase(app);
-const messagesRef = ref(db, "messages");
-
-// Elements
+const messagesList = document.getElementById("messages-list");
 const sendBtn = document.getElementById("sendBtn");
-const messageText = document.getElementById("messageText");
-const messagesList = document.getElementById("messagesList");
+const messageInput = document.getElementById("messageInput");
 
-// Send message
-sendBtn.addEventListener("click", () => {
-    const text = messageText.value.trim();
+// SEND MESSAGE
+sendBtn.addEventListener("click", async () => {
+    const text = messageInput.value.trim();
     if (text === "") return;
 
-    push(messagesRef, {
+    await addDoc(collection(db, "messages"), {
         text: text,
-        time: Date.now()
+        time: serverTimestamp()
     });
 
-    messageText.value = "";
+    messageInput.value = "";
 });
 
-// Load messages in real time
-onValue(messagesRef, (snapshot) => {
+// LISTEN FOR NEW MESSAGES
+const q = query(collection(db, "messages"), orderBy("time", "asc"));
+
+onSnapshot(q, (snapshot) => {
     messagesList.innerHTML = "";
-    snapshot.forEach((msg) => {
-        const data = msg.val();
+    snapshot.forEach((doc) => {
+        const msg = doc.data();
 
         const bubble = document.createElement("div");
         bubble.classList.add("message-bubble");
-        bubble.innerText = data.text;
+        bubble.textContent = msg.text;
 
         messagesList.appendChild(bubble);
     });
+
+    // auto-scroll to bottom
+    messagesList.scrollTop = messagesList.scrollHeight;
 });
