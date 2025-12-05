@@ -1,69 +1,77 @@
-import {
-    getFirestore,
-    collection,
-    addDoc,
-    query,
-    orderBy,
-    onSnapshot,
-    serverTimestamp
-} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+// ========== FIREBASE SETUP ==========
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getDatabase, ref, push, onChildAdded, set } 
+from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
-import { auth } from "./firebase.js";
+const firebaseConfig = {
+  apiKey: "YOUR_KEY",
+  authDomain: "YOUR_DOMAIN",
+  databaseURL: "YOUR_DB_URL",
+  projectId: "YOUR_ID",
+  storageBucket: "YOUR_BUCKET",
+  messagingSenderId: "YOUR_SENDER",
+  appId: "YOUR_APP_ID"
+};
 
-const db = getFirestore();
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
 
-// Elements from the HTML
-const messageForm = document.getElementById("messageForm");
-const messageInput = document.getElementById("messageInput");
+const messagesRef = ref(db, "messages");
+
+// DOM Elements
+const form = document.getElementById("messageForm");
 const messagesContainer = document.getElementById("messagesContainer");
+const messageInput = document.getElementById("messageInput");
 
-// Listen for new messages in realtime
-function loadMessages() {
-    const messagesRef = collection(db, "messages");
-    const q = query(messagesRef, orderBy("timestamp", "asc"));
+// ========== SEND MESSAGE ==========
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
 
-    onSnapshot(q, (snapshot) => {
-        messagesContainer.innerHTML = ""; // Clear first
+  const text = messageInput.value.trim();
+  if (text === "") return;
 
-        snapshot.forEach((doc) => {
-            const data = doc.data();
-            const messageDiv = document.createElement("div");
+  const msgData = {
+    user: "Perry User",
+    text: text,
+    time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+  };
 
-            messageDiv.className = "message-box";
-            messageDiv.innerHTML = `
-                <p class="message-user">${data.user}</p>
-                <p class="message-text">${data.text}</p>
-            `;
+  push(messagesRef, msgData);
 
-            messagesContainer.appendChild(messageDiv);
-        });
-
-        // Auto scroll to bottom
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    });
-}
-
-// Send a new message
-messageForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const text = messageInput.value.trim();
-    const user = auth.currentUser?.email || "Anonymous";
-
-    if (!text) return;
-
-    try {
-        await addDoc(collection(db, "messages"), {
-            text: text,
-            user: user,
-            timestamp: serverTimestamp()
-        });
-
-        messageInput.value = "";
-    } catch (err) {
-        console.error("Error sending message:", err);
-    }
+  messageInput.value = "";
 });
 
-// Load chat immediately
-loadMessages();
+// ========== DISPLAY MESSAGES ==========
+onChildAdded(messagesRef, (data) => {
+  const msg = data.val();
+
+  const bubble = document.createElement("div");
+  bubble.classList.add("message-bubble");
+
+  bubble.innerHTML = `
+    <strong>${msg.user}</strong><br>
+    ${msg.text}
+    <div class="msg-time">${msg.time}</div>
+  `;
+
+  messagesContainer.appendChild(bubble);
+
+  // Auto scroll to bottom
+  messagesContainer.scrollTop = messagesContainer.scrollHeight;
+});
+
+// ========== TYPING INDICATOR ==========
+let typingRef = ref(db, "typing");
+
+messageInput.addEventListener("input", () => {
+  set(typingRef, "Someone is typing...");
+
+  setTimeout(() => {
+    set(typingRef, "");
+  }, 1500);
+});
+
+onChildAdded(typingRef, (data) => {
+  document.getElementById("typingStatus").innerText = data.val();
+});
