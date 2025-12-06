@@ -1,67 +1,40 @@
-import { db, auth } from "./firebase.js";
+// ===============================
+//  FIREBASE: LOAD MESSAGES
+// ===============================
+import { db } from "./firebase.js";
 import { 
-    collection, addDoc, serverTimestamp, query, orderBy, onSnapshot 
-} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+    collection, 
+    addDoc, 
+    onSnapshot, 
+    serverTimestamp, 
+    query, 
+    orderBy 
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-// DOM elements
-const sendBtn = document.getElementById("send-btn");
-const messageInput = document.getElementById("message-input");
-const messagesList = document.getElementById("messages-list");
+// Reference to the "messages" collection
+const messagesRef = collection(db, "messages");
 
-// Auto load messages in real-time
-function loadMessages() {
-    const q = query(
-        collection(db, "messages"),
-        orderBy("timestamp", "asc")
-    );
+// Select HTML elements
+const messagesList = document.getElementById("messagesList");
+const messageInput = document.getElementById("messageInput");
+const sendMessageBtn = document.getElementById("sendMessageBtn");
 
-    onSnapshot(q, (snapshot) => {
-        messagesList.innerHTML = "";
-
-        snapshot.forEach((doc) => {
-            const msg = doc.data();
-            const bubble = document.createElement("div");
-            bubble.classList.add("message-bubble");
-
-            // Show sender or anonymous
-            bubble.innerHTML = `
-                <strong>${msg.email || "User"}:</strong><br>
-                ${msg.text}
-            `;
-
-            messagesList.appendChild(bubble);
-        });
-
-        // Auto scroll down
-        messagesList.scrollTop = messagesList.scrollHeight;
-    });
-}
-
-// Send message
-async function sendMessage() {
+// ===============================
+//  SEND MESSAGE
+// ===============================
+sendMessageBtn.addEventListener("click", async () => {
     const text = messageInput.value.trim();
     if (text === "") return;
 
-    const user = auth.currentUser;
-
-    await addDoc(collection(db, "messages"), {
+    await addDoc(messagesRef, {
         text: text,
-        email: user ? user.email : "Anonymous",
         timestamp: serverTimestamp()
     });
 
     messageInput.value = "";
-}
-
-// CLICK send
-sendBtn.addEventListener("click", sendMessage);
-
-// ENTER key sends message
-messageInput.addEventListener("keypress", function (e) {
-    if (e.key === "Enter") {
-        sendMessage();
-    }
 });
 
-// Load messages on page start
-loadMessages();
+// ===============================
+//  LIVE MESSAGE LISTENER
+// ===============================
+const q = query(messagesRef, orderBy("timestamp", "asc
