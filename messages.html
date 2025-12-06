@@ -1,41 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Messages</title>
+
+    <!-- Main Style -->
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
-    <!-- Top bar -->
-    <div class="top-bar">
-        Messages
-    </div>
-
-    <!-- Messages list -->
-    <div class="messages-list" id="messagesList">
-        <!-- Messages will load here -->
-    </div>
-
-    <!-- Message input -->
-    <div class="message-input-box">
-        <input type="text" id="messageInput" placeholder="Type a message...">
-        <button id="sendButton">Send</button>
-    </div>
-
+    <!-- Firebase -->
     <script type="module" src="firebase.js"></script>
-    <script type="module" src="messages.js"></script>
-
-</body>
-</html><!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Messages</title>
-
-    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
     <!-- Top Bar -->
@@ -44,17 +19,24 @@
     </div>
 
     <!-- Messages List -->
-    <div class="messages-list" id="messages-list">
-        <!-- Chat bubbles will appear here -->
+    <div id="messages-list" class="messages-list">
+        <!-- Messages appear here automatically -->
     </div>
 
-    <!-- Message Input -->
-    <div class="message-input-box">
-        <input type="text" id="messageInput" placeholder="Type a message...">
-        <button id="sendBtn">Send</button>
+    <!-- Message Input Area -->
+    <div class="message-input-area">
+        <input type="text" id="messageInput" placeholder="Type a message..." />
+        <button id="sendMessageBtn">Send</button>
     </div>
 
-    <script type="module" src="firebase.js"></script>
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <a href="home.html" class="nav-item">🏠 Home</a>
+        <a href="messages.html" class="nav-item active">💬 Messages</a>
+        <a href="profile.html" class="nav-item">👤 Profile</a>
+    </div>
+
+    <!-- Messages Functionality -->
     <script type="module" src="messages.js"></script>
 
 </body>
