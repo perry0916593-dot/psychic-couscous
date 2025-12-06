@@ -1,6 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8" />
+    <title>Messages</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top bar -->
+    <div class="top-bar">
+        Messages
+    </div>
+
+    <!-- Messages list -->
+    <div class="messages-list" id="messagesList">
+        <!-- Messages will load here -->
+    </div>
+
+    <!-- Message input -->
+    <div class="message-input-box">
+        <input type="text" id="messageInput" placeholder="Type a message...">
+        <button id="sendButton">Send</button>
+    </div>
+
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="messages.js"></script>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
     <meta charset="UTF-8">
     <title>Messages</title>
 
