@@ -1,42 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
     <title>Messages</title>
-
-    <!-- Main Style -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- Firebase -->
-    <script type="module" src="firebase.js"></script>
 </head>
 <body>
 
-    <!-- Top Bar -->
+    <!-- TOP BAR -->
     <div class="top-bar">
         Messages
     </div>
 
-    <!-- Messages List -->
+    <!-- MESSAGES LIST -->
     <div id="messages-list" class="messages-list">
-        <!-- Messages appear here automatically -->
+        <!-- Messages will appear here automatically -->
     </div>
 
-    <!-- Message Input Area -->
+    <!-- INPUT AREA -->
     <div class="message-input-area">
-        <input type="text" id="messageInput" placeholder="Type a message..." />
-        <button id="sendMessageBtn">Send</button>
+        <input type="text" id="messageInput" placeholder="Type a message...">
+        <button id="sendBtn">Send</button>
     </div>
 
-    <!-- Bottom Navigation -->
-    <div class="bottom-nav">
-        <a href="home.html" class="nav-item">🏠 Home</a>
-        <a href="messages.html" class="nav-item active">💬 Messages</a>
-        <a href="profile.html" class="nav-item">👤 Profile</a>
-    </div>
+    <!-- FIREBASE -->
+    <script type="module" src="firebase.js"></script>
 
-    <!-- Messages Functionality -->
+    <!-- MESSAGES JS -->
     <script type="module" src="messages.js"></script>
 
 </body>
