@@ -1,33 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Messages</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<!-- MESSAGE PAGE HTML -->
+<div class="top-bar">
+    Messages
+</div>
 
-    <!-- TOP BAR -->
-    <div class="top-bar">
-        Messages
-    </div>
+<div class="messages-list" id="messagesList">
+    <!-- Messages will load here -->
+</div>
 
-    <!-- MESSAGES LIST -->
-    <div id="messages-list" class="messages-list">
-        <!-- Messages will appear here automatically -->
-    </div>
+<div class="message-input-area">
+    <input type="text" id="messageInput" placeholder="Type your message...">
+    <button id="sendMessageBtn">Send</button>
+</div>
 
-    <!-- INPUT AREA -->
-    <div class="message-input-area">
-        <input type="text" id="messageInput" placeholder="Type a message...">
-        <button id="sendBtn">Send</button>
-    </div>
+<!-- MESSAGE PAGE SCRIPT -->
+<script>
+document.getElementById("sendMessageBtn").addEventListener("click", function () {
+    let messageText = document.getElementById("messageInput").value;
 
-    <!-- FIREBASE -->
-    <script type="module" src="firebase.js"></script>
+    if (messageText.trim() === "") return;
 
-    <!-- MESSAGES JS -->
-    <script type="module" src="messages.js"></script>
+    let messageBubble = document.createElement("div");
+    messageBubble.classList.add("message-bubble");
+    messageBubble.textContent = messageText;
 
-</body>
-</html>
+    document.getElementById("messagesList").appendChild(messageBubble);
+
+    document.getElementById("messageInput").value = "";
+    document.getElementById("messagesList").scrollTop =
+        document.getElementById("messagesList").scrollHeight;
+});
+</script>
